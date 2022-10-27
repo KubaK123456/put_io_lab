@@ -1,3 +1,3 @@
 Jakub Kopieniak
-27.10.2022
+26.10.2022
 new featutre
