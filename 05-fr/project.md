@@ -50,10 +50,19 @@ Osoba chcąca zakupić produkt na aukcji.
 
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
-* ...
+* [UC2](#uc2): Sprawdzenie aktualnie najwyższej oferowanej kwoty za produkt
+* [UC3](#uc3): Sprawdzenie historii oferowanych kwot za produkt
+* [UC4](#uc4): Sprawdzenie informacji o czasie pozostałym do końca aukcji
+* [UC5](#uc5): Sprawdzenie danych do wysyłki osoby, która wygrała aukcję
 
 [Kupujący](#ac2)
-* ...
+* [UC1](#uc1): Sprawdzenie dostępnych aukcji
+* [UC2](#uc2): Wybranie interesującej aukcji
+* [UC3](#uc3): Sprawdzenie najwyższej oferowanej kwoty za daną aukcję
+* [UC4](#uc4): Zaoferowanie kwoty wyżeszj od aktualnie najwyższej
+* [UC5](#uc5): Sprawdzenie informacji o stanie aukcji
+* [UC6](#uc6): Sprawdzenie informacji o czasie pozostałym do końca aukcji
+* [UC7](#uc7): Przekazanie należności sprzedającemu po wygranej aukcji
 
 ---
 <a id="uc1"></a>
@@ -77,19 +86,43 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Sprawdzenie aktualnie najwyższej oferowanej kwoty za produkt
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. Kupujący wybiera interesującą go aukcję
+2. Kupujący oferuje kwotę wyższą od aktualnej
+3. System weryfikuje podaną kwotę
+4. Sprzedający zgłasza chęć otrzymania informacji o aktualnie najwyższej oferowanej kwocie
+5. System informuje sprzedającego o aktualnie najwyższej oferowanej kwocie za produkt
 
 **Scenariusze alternatywne:**
 
-1.A. ...
-* 4.A.1. ...
+1.A. Kupujący zaoferował kwotę niższą od aktualnie najwyższej oferowanej
+* 4.A.1. System informuje o błędnie wprowadzonej kwocie
+* 4.A.2. Przejdź do kroku 2.
 
 ---
+
+
+<a id="uc5"></a>
+### UC5: Sprawdzenie danych do wysyłki osoby, która wygrała aukcję
+
+**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2)
+
+**Scenariusz główny:**
+1. Kupujący oferuje kwotę wyższą od aktualnie najwyższej
+2. Czas aukcji kończy się 
+3. Kupujący podaje dane do wysyłki
+4. Sprzedający zgłasza chęć otrzymania danych kupującego, który wygrał aukcję
+5. System podaje sprzedającemu dane do wysyłki kupującego
+
+**Scenariusze alternatywne:**
+
+1.A. Kupujący podał nieprawidłowe dane do wysyłki
+* 4.A.1. Sprzedający zgłasza nieprawidłowść danych
+* 4.A.2. Przejdź do kroku 3.
 
 ## Obiewkty biznesowe (inaczje obiekty dziedzinowe lub informatycjne)
 
